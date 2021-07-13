@@ -1,0 +1,89 @@
+//*------------------*
+//*  カラーとフォント
+//*------------------*
+
+//color
+$font-color__black:#333333;
+$font-color__white:#FFFFFF;
+$base-color:#224FF0;
+
+//font-family
+$font-en: Noto Serif;
+$font-ja:'Noto Sans JP', sans-serif;
+
+//*------------------*
+//*  レスポンシブ
+//*------------------*
+
+//ブレイクポイント
+$tb: 768px; //タブレット
+$mb: 375px; //スマホ
+
+//@mediaのフォーマット
+// タブレット
+@mixin tablet {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+//スマホ
+@mixin mobile {
+  @media screen and (max-width: $mb) {
+    @content;
+  }
+}
+
+//*------------------*
+//*  font-size定義
+//*------------------*
+//$sizeにpx表示を入れて使う
+
+@mixin rem($size) {
+  font-size: $size + px; /*IE9以前に対応する*/
+  font-size: ($size / 16) + rem;
+}
+
+//*---------------------------------------------*
+//*  ホバー時にテキストの後ろにサークルが出るアニメーション
+//*---------------------------------------------*
+
+@mixin _hover-doubleCircle($color:#fff){
+
+  position: relative;
+  z-index: 20;
+  cursor: pointer;
+
+    &::before,&::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 4px solid $color;
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+    border-radius: 50%;
+    background: transparent;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: -1;
+    }
+
+    &::after{
+      border-width: 2px;
+      transition: all 0.4s;
+    }
+
+    &:hover::before,
+    &:focus:before{
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%) scale(1);
+    }
+
+    &:hover::after,
+    &:focus::after{
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%) scale(1.3);
+    }
+
+}

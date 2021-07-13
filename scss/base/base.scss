@@ -1,0 +1,128 @@
+@import "../mixin/mixin.scss";
+
+//*------------------*
+//*  base(共通)
+//*------------------*
+* {
+  box-sizing: border-box;
+}
+
+html{
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  @include rem(16);
+  letter-spacing: 0.05em;
+  color: $font-color__black;
+  font-family: $font-ja;
+
+  
+  &.noscroll{
+    overflow: hidden;
+  }
+}
+
+img, svg {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+svg{
+  fill:currentColor;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color:currentColor;
+  display: inline-block;
+
+  :hover{
+    opacity: .7;
+    transition: .3s;
+  }
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+//sectionの共通inner設定
+
+.section__inner {
+  max-width: 1270px;
+  margin: 170px auto 0;
+  padding: 0 4vw;
+  text-align: center;
+
+  @include mobile(){
+    margin-top: 80px;
+  }
+
+}
+
+.section__title{
+  @include rem(48);
+  color: $font-color__black;
+  font-family: $font-en;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before,&::after{
+    content: "";
+    width: 75px;
+    border-top: 2px solid #333;
+  }
+
+  &::before{
+    margin-right: 40px;
+    @include mobile(){
+      margin-right: 20px;
+    }
+  }
+  &::after{
+    margin-left: 40px;
+    @include mobile(){
+      margin-left: 20px;
+    }
+  }
+
+  @include mobile(){
+    @include rem(32);
+  }
+
+}
+
+.section__title-sub{
+  @include rem(18);
+  color: $font-color__black;
+  margin-top: 5px;
+
+  @include mobile(){
+    @include rem(16);
+  }
+
+
+}
+
+
+

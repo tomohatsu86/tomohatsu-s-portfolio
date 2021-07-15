@@ -695,13 +695,13 @@ button {
 
 @media screen and (max-width: 768px) {
   #about::before {
-    height: 1050px;
+    height: 1200px;
   }
 }
 
 @media screen and (max-width: 375px) {
   #about::before {
-    height: 740px;
+    height: 950px;
   }
 }
 
@@ -793,11 +793,11 @@ button {
 }
 
 .media__text {
-  margin: 37px 0 10px;
+  margin: 20px 0 10px;
   font-size: 20px;
   /*IE9以前に対応する*/
   font-size: 1.25rem;
-  line-height: 2.5em;
+  line-height: 1.8em;
 }
 
 @media screen and (max-width: 375px) {

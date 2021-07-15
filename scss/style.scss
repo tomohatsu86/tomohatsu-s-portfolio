@@ -416,10 +416,10 @@
   z-index: -1;
 
   @include tablet(){
-    height: 1050px
+    height: 1200px
   }
   @include mobile(){
-    height: 740px
+    height: 950px
   }
 }
 
@@ -480,9 +480,9 @@
   }
 
   &__text{
-    margin: 37px 0 10px;
+    margin: 20px 0 10px;
     @include rem(20);
-    line-height: 2.5em;
+    line-height: 1.8em;
 
     @include mobile(){
       @include rem(16);
